@@ -1,7 +1,11 @@
+import styles from './header.module.scss';
+
 function Header() {
     return (
         
-        <p>hola</p>
+        <header id={styles.header}>
+
+        </header>
         
     )
 }

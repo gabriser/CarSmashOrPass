@@ -3,6 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Error404 from './components/Error404';
+import Home from './components/Home';
+import PlayGame from './components/PlayGame';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   const [count, setCount] = useState(0)
 
