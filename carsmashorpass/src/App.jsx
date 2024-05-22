@@ -5,9 +5,10 @@ import './App.css'
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Error404 from './components/Error404';
 import Home from './components/Home';
 import PlayGame from './components/PlayGame';
+import Scoreboard from './components/Scoreboard';
+import Credits from './components/Credits';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -44,7 +45,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="play" element={<PlayGame />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="scoreboard" element={<Scoreboard />} />
+          <Route path="credits" element={<Credits />} />
+          <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
       </BrowserRouter>

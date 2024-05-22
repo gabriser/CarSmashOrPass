@@ -1,4 +1,80 @@
+// Variables de colores
+$bg: #333;
+$white: #fff;
+$green: #4caf50;
+$green-hover: #42a145;
+$red: #f44336;
+$red-hover: #bb2421;
+$gray: #666;
+$gray-hover: #999;
+
 #home {
     height: 80vh;
-    background-color: chocolate;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    // todos los elementos hijos de main
+    & > * {
+        margin: 1rem;
+    }
+
+    img {
+        width: 10rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: $white;
+        margin-top: -1rem;
+        
+        span {
+            font-weight: 700;
+
+            &:first-child {
+                color: $green;
+            }
+
+            &:last-child {
+                color: $red;
+            }
+
+        }
+
+    }
+
+    button {
+        width: 12rem;
+        font-size: 1.2rem;
+        background-color: $gray;
+        color: $white;
+        padding: 1rem;
+        border: 0.2rem solid $white;
+        border-radius: 2rem 0 2rem 0;
+
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: $gray-hover;
+        }
+
+        &#playbtn {
+            width: 20rem;
+            font-size: 2rem;
+            background: linear-gradient(90deg, $green 40%, $red 60%);
+            color: $white;
+
+            transition: all 0.3s;
+
+            &:hover {
+                background: linear-gradient(90deg, $green-hover 40%, $red-hover 60%);
+            }
+
+        }
+
+    }
+
 }
