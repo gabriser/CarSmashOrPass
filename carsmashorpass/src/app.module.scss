@@ -1,0 +1,33 @@
+/* Montserrat Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Variables de colores
+$bg: #111;
+$white: #fff;
+$green: #4caf50;
+$green-hover: #42a145;
+$red: #f44336;
+$red-hover: #bb2421;
+$gray: #222;
+$gray-hover: #444;
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: $bg;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+#app {
+    margin: 0 auto;
+    max-width: 500px;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

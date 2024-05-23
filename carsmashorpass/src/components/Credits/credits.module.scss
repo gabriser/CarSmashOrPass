@@ -1,4 +1,81 @@
+@import '../../app.module.scss';
+
 #credits {
-    height: 80vh;
-    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    // todos los elementos hijos de main
+    & > * {
+        margin: 1rem;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: $white;
+    }
+
+    p {
+        text-align: center;
+        color: $white;
+    }
+
+    .cont {
+        background-color: $gray;
+        border-radius: 3rem 0 3rem 0;
+        padding: 1rem;
+        color: $white;
+
+        h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            li {
+                margin: 0.5rem 0;
+                a {
+                    color: $green;
+                    &:focus {
+                        color: $green-hover;
+                    }
+                }
+            }
+        }
+
+        #tech {
+            display: flex;
+            flex-wrap: wrap;
+
+            article {
+                background-color: $bg;
+                padding: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1rem;
+                width: 3rem;
+                height: 3rem;
+                margin: 0.2rem;
+
+                svg {
+                    width: 2rem;
+                    height: 2rem;
+                    fill: $white;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 0.8rem;
+                }
+
+            }
+
+        }
+
+    }
+
 }

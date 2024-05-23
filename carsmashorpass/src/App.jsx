@@ -10,6 +10,8 @@ import PlayGame from './components/PlayGame';
 import Scoreboard from './components/Scoreboard';
 import Credits from './components/Credits';
 
+import styles from './app.module.scss';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -39,7 +41,7 @@ function App() {
       </p>
     </>*/
 
-    <div className='container'>
+    <div id={styles.app}>
       <BrowserRouter>
         <Header />
         <Routes>

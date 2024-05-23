@@ -1,16 +1,7 @@
-// Variables de colores
-$bg: #333;
-$white: #fff;
-$green: #4caf50;
-$green-hover: #42a145;
-$red: #f44336;
-$red-hover: #bb2421;
-$gray: #666;
-$gray-hover: #999;
+@import '../../app.module.scss';
 
 #home {
-    height: 80vh;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +17,8 @@ $gray-hover: #999;
     }
 
     h1 {
-        font-size: 2.5rem;
+        text-align: center;
+        font-size: 2.2rem;
         font-weight: 400;
         color: $white;
         margin-top: -1rem;
@@ -47,6 +39,11 @@ $gray-hover: #999;
     }
 
     button {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         width: 12rem;
         font-size: 1.2rem;
         background-color: $gray;
@@ -59,6 +56,7 @@ $gray-hover: #999;
 
         &:hover {
             background-color: $gray-hover;
+            transform: scale(1.1);
         }
 
         &#playbtn {
@@ -67,12 +65,17 @@ $gray-hover: #999;
             background: linear-gradient(90deg, $green 40%, $red 60%);
             color: $white;
 
-            transition: all 0.3s;
-
             &:hover {
                 background: linear-gradient(90deg, $green-hover 40%, $red-hover 60%);
             }
 
+        }
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            fill: $white;
+            margin-right: 0.5rem;
         }
 
     }

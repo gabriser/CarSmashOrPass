@@ -1,4 +1,22 @@
+@import '../../app.module.scss';
+
 #scoreboard {
-    height: 80vh;
-    background-color: springgreen;
+    background-color: rgb(5, 90, 47);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    // todos los elementos hijos de main
+    & > * {
+        margin: 1rem;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: $white;
+    }
+
 }

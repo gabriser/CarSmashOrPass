@@ -42,16 +42,4 @@
 }
 */
 
-/* Montserrat Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: #333;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 500px;
-}
+/* PD: css de App se encuentra en app.module.scss */
