@@ -1,5 +1,79 @@
 @import '../../app.module.scss';
 
 #playgame {
-    background-color: darkcyan;
+    margin: 0 1rem;
+
+    #card {
+        background-color: $gray;
+        color: $white;
+        border-radius: 2rem;
+        text-align: center;
+        transition: all 0.3s;
+
+        h1 {
+            font-size: 2rem;
+            background-color: $gray-hover;
+            padding: 1rem;
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        img {
+            width: 28rem;
+        }
+
+        #details {
+            padding: 0.5rem;
+            .detcol {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem;
+                &:nth-child(2n+1) {
+                    background-color: $gray-hover;
+                }
+            }
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+    }
+
+    #contbtn {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        button {
+            border: 0.2rem solid $white;
+            border-radius: 2rem 0 2rem 0;
+            padding: 1rem;
+            font-size: 2rem;
+            color: $white;
+            width: 45%;
+            height: 7rem;
+            transition: all 0.3s;
+
+            &#smashbtn {
+                background-color: $green;
+                &:hover {
+                    background-color: $green-hover;
+                }
+            }
+
+            &#passbtn {
+                background-color: $red;
+                &:hover {
+                    background-color: $red-hover;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+        }
+
+    }
+
 }
