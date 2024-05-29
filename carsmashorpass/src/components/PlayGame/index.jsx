@@ -11,7 +11,7 @@ function PlayGame() {
                 <div id={styles.details}>
                     <div className={styles.detcol}>
                         <h2>Brand</h2>
-                        <h3>aaa</h3>
+                        <h3>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa</h3>
                     </div>
                     <div className={styles.detcol}>
                         <h2>Model</h2>

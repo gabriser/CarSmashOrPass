@@ -21,8 +21,8 @@ function Credits() {
                     <li>Racing Car free icon created by <Link target="_blank" to="https://www.flaticon.com/free-icon/racing-car_4745016">DinosoftLabs on Flaticon</Link></li>
                     <li>Font Awesome Free 6.5.2 by <Link target="_blank" to="https://fontawesome.com">@fontawesome</Link> <Link target="_blank" to="https://fontawesome.com/license/free">License</Link> - Copyright 2024 Fonticons, Inc.</li>
                     <li>Montserrat Font Family from <Link target="_blank" to="https://fonts.google.com/specimen/Montserrat/about?query=montserrat">Google Fonts (OPL License)</Link></li>
-                    <li>Reset CSS by Meyer Web <Link to="https://meyerweb.com/eric/tools/css/reset/reset.css">reset.css</Link></li>
-                    <li>Forza Wiki: <Link to="https://forza.fandom.com/wiki/Forza_Horizon_5/Cars" target="_blank">Forza Horizon 5 Cars</Link>. Forza Wiki made in <Link to="https://fandom.com/" target="_blank">Fandom &copy;</Link>. <Link to="https://forza.net/" target="_blank">Forza</Link> Games Franchise: <Link to="https://www.turn10studios.com/" target="_blank">Turn 10 Studios, Microsoft &copy;</Link> </li>
+                    <li>Reset CSS by Meyer Web <Link to="https://meyerweb.com/eric/tools/css/reset/reset.css" target="_blank">reset.css</Link></li>
+                    <li>Forza Wiki: <Link to="https://forza.fandom.com/wiki/Forza_Horizon_5/Cars" target="_blank">Forza Horizon 5 Cars</Link>. Forza Wiki made in <Link to="https://fandom.com/" target="_blank">Fandom &copy;</Link>. <Link to="https://forza.net/" target="_blank">Forza</Link> Games Franchise: <Link to="https://www.turn10studios.com/" target="_blank">Turn 10 Studios, Microsoft &copy;</Link> and <Link to="https://playground-games.com/" target="_blank">Playground Games, Microsoft &copy;</Link></li>
                 </ul>
 
             </section>

@@ -30,6 +30,13 @@
                 &:nth-child(2n+1) {
                     background-color: $gray-hover;
                 }
+                h2 {
+                    margin-right: 0.5rem;
+                }
+                h3 {
+                    margin-left: 0.5rem;
+                    text-align: right;
+                }
             }
         }
 
@@ -63,6 +70,7 @@
 
             &#passbtn {
                 background-color: $red;
+                border-radius: 0 2rem 0 2rem;
                 &:hover {
                     background-color: $red-hover;
                 }
