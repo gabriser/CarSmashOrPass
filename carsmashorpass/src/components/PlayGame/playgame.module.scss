@@ -1,7 +1,27 @@
 @import '../../app.module.scss';
 
+#loading {
+    text-align: center;
+    color: $white;
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+}
+
 #playgame {
     margin: 0 1rem;
+
+    #carindex {
+        color: $white;
+        font-weight: 700;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+    }
 
     #card {
         background-color: $gray;
@@ -9,6 +29,7 @@
         border-radius: 2rem;
         text-align: center;
         transition: all 0.3s;
+        margin-top: 1rem;
 
         h1 {
             font-size: 2rem;
