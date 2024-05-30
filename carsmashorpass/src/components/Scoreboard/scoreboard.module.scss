@@ -1,5 +1,17 @@
 @import '../../app.module.scss';
 
+#loading {
+    text-align: center;
+    color: $white;
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+}
+
 #scoreboard {
 
     // todos los elementos hijos de main

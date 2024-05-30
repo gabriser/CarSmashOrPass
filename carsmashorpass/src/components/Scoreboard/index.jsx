@@ -23,6 +23,15 @@ function Scoreboard() {
         fetchPassedCars();
     }, []);
 
+    if (smashedCars.length === 0) {
+        return (
+            <div id={styles.loading}>
+                <h1>Loading...</h1>
+                <p>If it is taking a long time, it is possible that the server is not working correctly. Try again later.</p>
+            </div>
+        );
+    }
+
     return (
         <main id={styles.scoreboard}>
             <h1>Scoreboard</h1>
