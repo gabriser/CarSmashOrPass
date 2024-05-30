@@ -15,11 +15,25 @@ app.use(express.json());
 
 const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
 
+// get all cars
 app.get('/cars', (req, res) => {
   const cars = db.prepare('SELECT * FROM cars').all();
   res.json(cars);
 });
 
+// get all cars most smashed
+app.get('/cars/mostsmashed', (req, res) => {
+  const cars = db.prepare('SELECT * FROM cars ORDER BY smash DESC').all();
+  res.json(cars);
+});
+
+// get all cars most passed
+app.get('/cars/mostpassed', (req, res) => {
+  const cars = db.prepare('SELECT * FROM cars ORDER BY pass DESC').all();
+  res.json(cars);
+});
+
+// update +1 smash car id
 app.post('/cars/:id/smash', (req, res) => {
   const { id } = req.params;
   const result = db.prepare('UPDATE cars SET smash = smash + 1 WHERE id = ?').run(id);
@@ -30,6 +44,7 @@ app.post('/cars/:id/smash', (req, res) => {
   }
 });
 
+// update +1 pass car id
 app.post('/cars/:id/pass', (req, res) => {
   const { id } = req.params;
   const result = db.prepare('UPDATE cars SET pass = pass + 1 WHERE id = ?').run(id);

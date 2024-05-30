@@ -1,12 +1,6 @@
 @import '../../app.module.scss';
 
 #scoreboard {
-    background-color: rgb(5, 90, 47);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
     // todos los elementos hijos de main
     & > * {
@@ -17,6 +11,105 @@
         text-align: center;
         font-size: 2.2rem;
         color: $white;
+    }
+
+    #contbtn {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        button {
+            border: 0.2rem solid $white;
+            border-radius: 2rem 0 2rem 0;
+            padding: 1rem;
+            font-size: 1rem;
+            color: $white;
+            width: 45%;
+            transition: all 0.3s;
+
+            &#smashbtn {
+                background-color: $green;
+                &:hover {
+                    background-color: $green-hover;
+                }
+            }
+
+            &#passbtn {
+                background-color: $red;
+                border-radius: 0 2rem 0 2rem;
+                &:hover {
+                    background-color: $red-hover;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+        }
+
+    }
+
+    #smashtable h2 {
+        color: $green
+    }
+
+    #passtable h2 {
+        color: $red;
+    }
+
+    #smashtable, #passtable {
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        table, tr, th, td {
+            border: 0.2rem solid $bg;
+        }
+    
+        table {
+            width: 100%;
+            font-size: 1rem;
+            color: $white;
+            tr {
+                th, td {
+                    padding: 0.5rem;
+                    vertical-align: middle;
+                    &:nth-child(1) {
+                        width: 20%;
+                    }
+                    &:nth-child(2) {
+                        width: 70%;
+                    }
+                    &:nth-child(3) {
+                        width: 10%;
+                        text-align: center;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                    span {
+                        background-color: $white;
+                        font-size: 0.8rem;
+                        padding: 0.2rem;
+                        color: $bg;
+                        margin: 0 0.5rem;
+                        border-radius: 1rem;
+                        font-weight: 700;
+                    }
+                }
+                vertical-align: middle;
+                border-radius: 2rem;
+                background-color: $gray;
+                &:nth-child(2n+1) {
+                    background-color: $gray-hover;
+                }
+            }
+        }
+
     }
 
 }
