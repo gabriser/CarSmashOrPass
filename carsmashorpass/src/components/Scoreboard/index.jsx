@@ -5,6 +5,7 @@ function Scoreboard() {
     const [view, setView] = useState('smashed'); // Estado para manejar la vista de la tabla
     const [smashedCars, setSmashedCars] = useState([]);
     const [passedCars, setPassedCars] = useState([]);
+    let i = 1;
 
     const fetchSmashedCars = async () => {
         const response = await fetch('http://localhost:3001/cars/mostsmashed');
@@ -44,48 +45,40 @@ function Scoreboard() {
             {view === 'smashed' && (
                 <section id={styles.smashtable}>
                     <h2>Most Smashed</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Img</th>
-                                <th>Name</th>
-                                <th>N</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {smashedCars.map(car => (
-                                <tr key={car.id}>
-                                    <td><img src={`cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
-                                    <td><span>{car.year}</span>{car.brand} {car.model}<span>{car.country}</span></td>
-                                    <td>{car.smash}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <div className={styles.tablescroll}>
+                        <table>
+                            <tbody>
+                                {smashedCars.map(car => (
+                                    <tr key={car.id}>
+                                        <td>{i++}</td>
+                                        <td><img src={`cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
+                                        <td>{car.brand} {car.model}<span>{car.year}</span><span>{car.country}</span></td>
+                                        <td>{car.smash}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             )}
 
             {view === 'passed' && (
                 <section id={styles.passtable}>
                     <h2>Most Passed</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Img</th>
-                                <th>Name</th>
-                                <th>N</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {passedCars.map(car => (
-                                <tr key={car.id}>
-                                    <td><img src={`cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
-                                    <td><span>{car.year}</span>{car.brand} {car.model}<span>{car.country}</span></td>
-                                    <td>{car.pass}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <div className={styles.tablescroll}>
+                        <table>
+                            <tbody>
+                                {passedCars.map(car => (
+                                    <tr key={car.id}>
+                                        <td>{i++}</td>
+                                        <td><img src={`cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
+                                        <td>{car.brand} {car.model}<span>{car.year}</span><span>{car.country}</span></td>
+                                        <td>{car.pass}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             )}
         </main>

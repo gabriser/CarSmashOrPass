@@ -82,6 +82,14 @@
             height: 7rem;
             transition: all 0.3s;
 
+            span {
+                background-color: $white;
+                color: $bg;
+                padding: 0.3rem;
+                border-radius: 2rem;
+                margin-right: 0.3rem;
+            }
+
             &#smashbtn {
                 background-color: $green;
                 &:hover {

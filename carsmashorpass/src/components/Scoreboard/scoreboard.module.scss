@@ -70,6 +70,16 @@
         color: $red;
     }
 
+    #smashtable table tr td:last-child {
+        color: $green;
+        font-weight: 700;
+    }
+
+    #passtable table tr td:last-child {
+        color: $red;
+        font-weight: 700;
+    }
+
     #smashtable, #passtable {
 
         h2 {
@@ -82,22 +92,39 @@
             border: 0.2rem solid $bg;
         }
     
+        .tablescroll {
+            max-height: 22rem;
+            overflow-y: auto;
+        }
+
         table {
             width: 100%;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: $white;
+            max-height: 20rem;
+            overflow-y: auto;
             tr {
+                vertical-align: middle;
+                border-radius: 2rem;
+                background-color: $gray;
+                &:nth-child(2n+1) {
+                    background-color: $gray-hover;
+                }
                 th, td {
                     padding: 0.5rem;
                     vertical-align: middle;
                     &:nth-child(1) {
-                        width: 20%;
+                        width: 8%;
+                        text-align: center;
                     }
                     &:nth-child(2) {
-                        width: 70%;
+                        width: 20%;
                     }
                     &:nth-child(3) {
-                        width: 10%;
+                        width: 64%;
+                    }
+                    &:nth-child(4) {
+                        width: 8%;
                         text-align: center;
                     }
                     img {
@@ -108,16 +135,10 @@
                         font-size: 0.8rem;
                         padding: 0.2rem;
                         color: $bg;
-                        margin: 0 0.5rem;
+                        margin-left: 0.5rem;
                         border-radius: 1rem;
                         font-weight: 700;
                     }
-                }
-                vertical-align: middle;
-                border-radius: 2rem;
-                background-color: $gray;
-                &:nth-child(2n+1) {
-                    background-color: $gray-hover;
                 }
             }
         }

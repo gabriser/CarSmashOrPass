@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 function PlayGame() {
     const [cars, setCars] = useState([]);
     const [currentCarIndex, setCurrentCarIndex] = useState(0);
+    const [smashCount, setSmashCount] = useState(0);
+    const [passCount, setPassCount] = useState(0);
 
     useEffect(() => {
         fetch('http://localhost:3001/cars')
@@ -13,6 +15,7 @@ function PlayGame() {
     }, []);
 
     const handleSmash = () => {
+        setSmashCount(smashCount + 1);
         const car = cars[currentCarIndex];
         fetch(`http://localhost:3001/cars/${car.id}/smash`, { method: 'POST' })
             .then(response => response.json())
@@ -27,6 +30,7 @@ function PlayGame() {
     };
 
     const handlePass = () => {
+        setPassCount(passCount + 1);
         const car = cars[currentCarIndex];
         fetch(`http://localhost:3001/cars/${car.id}/pass`, { method: 'POST' })
             .then(response => response.json())
@@ -81,8 +85,8 @@ function PlayGame() {
                 </div>
             </div>
             <section id={styles.contbtn}>
-                <button id={styles.smashbtn} onClick={handleSmash}>Smash</button>
-                <button id={styles.passbtn} onClick={handlePass}>Pass</button>
+                <button id={styles.smashbtn} onClick={handleSmash}><span>{smashCount}</span>Smash</button>
+                <button id={styles.passbtn} onClick={handlePass}><span>{passCount}</span>Pass</button>
             </section>
         </main>
     );
