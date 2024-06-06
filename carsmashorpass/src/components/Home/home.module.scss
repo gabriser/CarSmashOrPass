@@ -40,24 +40,7 @@
 
     button {
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        width: 12rem;
-        font-size: 1.2rem;
-        background-color: $gray;
-        color: $white;
-        padding: 1rem;
-        border: 0.2rem solid $white;
-        border-radius: 2rem 0 2rem 0;
-
-        transition: all 0.3s;
-
-        &:hover {
-            background-color: $gray-hover;
-            transform: scale(1.1);
-        }
+        @extend .defaultbtn;
 
         &#playbtn {
             width: 20rem;
@@ -71,12 +54,7 @@
 
         }
 
-        svg {
-            width: 2rem;
-            height: 2rem;
-            fill: $white;
-            margin-right: 0.5rem;
-        }
+        
 
     }
 
