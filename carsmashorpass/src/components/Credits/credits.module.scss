@@ -38,10 +38,7 @@
             li {
                 margin: 0.5rem 0;
                 a {
-                    color: $green;
-                    &:focus {
-                        color: $green-hover;
-                    }
+                    color: $blue;
                 }
             }
         }

@@ -1,5 +1,6 @@
 import styles from './playgame.module.scss';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function PlayGame() {
     const [cars, setCars] = useState([]);
@@ -8,6 +9,8 @@ function PlayGame() {
     const [passCount, setPassCount] = useState(0);
     const [history, setHistory] = useState([]);
     const [showHistory, setShowHistory] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
     useEffect(() => {
         fetch('http://localhost:3001/cars')
@@ -26,6 +29,7 @@ function PlayGame() {
     };
 
     const handleSmash = () => {
+        if (buttonsDisabled) return; // evitar spam boton mientras hay animacion de carta
         setSmashCount(smashCount + 1);
         const car = cars[currentCarIndex];
         fetch(`http://localhost:3001/cars/${car.id}/smash`, { method: 'POST' })
@@ -42,6 +46,7 @@ function PlayGame() {
     };
 
     const handlePass = () => {
+        if (buttonsDisabled) return; // evitar spam boton mientras hay animacion de carta
         setPassCount(passCount + 1);
         const car = cars[currentCarIndex];
         fetch(`http://localhost:3001/cars/${car.id}/pass`, { method: 'POST' })
@@ -62,7 +67,15 @@ function PlayGame() {
     };
 
     const goToNextCar = () => {
-        setCurrentCarIndex((prevIndex) => (prevIndex + 1) % cars.length);
+        setIsAnimating(true);
+        setButtonsDisabled(true);
+        setTimeout(() => {
+            setCurrentCarIndex((prevIndex) => (prevIndex + 1) % cars.length);
+        }, 250);
+        setTimeout(() => {
+            setIsAnimating(false);
+            setButtonsDisabled(false);
+        }, 500);
     };
 
     if (cars.length === 0) {
@@ -91,7 +104,12 @@ function PlayGame() {
                                         <tr key={index}>
                                             <td>{history.length - index}</td>
                                             <td><img src={`cars_img/${item.id}.webp`} alt={`${item.year} ${item.brand} ${item.model}`} /></td>
-                                            <td>{item.brand} {item.model}<span>{item.year}</span><span>{item.country}</span></td>
+                                            <td>
+                                                <Link to={item.moreinfo} target="_blank" className={styles.moreinfo}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                                                    {item.year} {item.brand} {item.model}
+                                                </Link>
+                                            </td>
                                             <td className={item.action === 'S' ? styles.smashtd : styles.passtd}>{item.action}</td>
                                         </tr>
                                     ))}
@@ -101,7 +119,7 @@ function PlayGame() {
                     )}
                     <section id={styles.contbackgamebtn}>
                         <button id={styles.backgamebtn} onClick={() => setShowHistory(false)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
                             Go back to game
                         </button>
                     </section>
@@ -113,25 +131,39 @@ function PlayGame() {
     return (
         <main id={styles.playgame}>
             <span id={styles.carindex}>{currentCarIndex+1} / {cars.length}</span>
-            <div id={styles.card}>
+            <div className={`${styles.card} ${isAnimating ? styles.animating : ''}`}>
                 <h1>{car.brand} {car.model}</h1>
                 <img src={`cars_img/${car.id}.webp`} alt={`${car.brand} ${car.model}`} />
-                <div id={styles.details}>
-                    <div className={styles.detcol}>
-                        <h2>Brand</h2>
-                        <h3>{car.brand}</h3>
+                <div id={styles.detflex}>
+                    <div className={styles.details}>
+                        <div className={styles.detcol}>
+                            <h2>Brand</h2>
+                            <h3>{car.brand}</h3>
+                        </div>
+                        <div className={styles.detcol}>
+                            <h2>Model</h2>
+                            <h3>{car.model}</h3>
+                        </div>
+                        <div className={styles.detcol}>
+                            <h2>Year</h2>
+                            <h3>{car.year}</h3>
+                        </div>
                     </div>
-                    <div className={styles.detcol}>
-                        <h2>Model</h2>
-                        <h3>{car.model}</h3>
-                    </div>
-                    <div className={styles.detcol}>
-                        <h2>Year</h2>
-                        <h3>{car.year}</h3>
-                    </div>
-                    <div className={styles.detcol}>
-                        <h2>Country</h2>
-                        <h3>{car.country}</h3>
+                    <div className={styles.details}>
+                        <div className={styles.detcol}>
+                            <h2>Country</h2>
+                            <h3>{car.country}</h3>
+                        </div>
+                        <div className={styles.detcol}>
+                            <h2>Power</h2>
+                            <h3>{car.power} bhp</h3>
+                        </div>
+                        <div className={styles.detcol}>
+                            <Link to={car.moreinfo} target="_blank" className={styles.moreinfo}>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                                Open Forza Wiki
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

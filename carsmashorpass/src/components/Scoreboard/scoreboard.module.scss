@@ -139,6 +139,19 @@
                         border-radius: 1rem;
                         font-weight: 700;
                     }
+
+                    .moreinfo {
+                        color: $blue;
+                        display: flex;
+                        align-items: center;
+                        svg {
+                            width: 1rem;
+                            height: 1rem;
+                            fill: $blue;
+                            margin-right: 0.5rem;
+                        }
+                    }
+
                 }
             }
         }
