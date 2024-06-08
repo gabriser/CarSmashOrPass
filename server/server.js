@@ -21,6 +21,12 @@ app.get('/cars', (req, res) => {
   res.json(cars);
 });
 
+// get all cars orded by: 1. brand (ex: Honda), 2. year (ex: 1997), 3. model (ex: Civic Type R)
+app.get('/cars/ordered', (req, res) => {
+  const cars = db.prepare('SELECT * FROM cars ORDER BY brand, year, model').all();
+  res.json(cars);
+});
+
 // get all cars most smashed
 app.get('/cars/mostsmashed', (req, res) => {
   const cars = db.prepare('SELECT * FROM cars ORDER BY smash DESC').all();
