@@ -55,6 +55,9 @@
             background-color: $gray-hover;
             padding: 1rem;
             border-radius: 1rem 1rem 0 0;
+            span {
+                font-weight: 700;
+            }
         }
 
         img {

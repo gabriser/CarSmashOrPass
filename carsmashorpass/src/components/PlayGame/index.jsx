@@ -132,7 +132,7 @@ function PlayGame() {
         <main id={styles.playgame}>
             <span id={styles.carindex}>{currentCarIndex+1} / {cars.length}</span>
             <div className={`${styles.card} ${isAnimating ? styles.animating : ''}`}>
-                <h1>{car.brand} {car.model}</h1>
+                <h1><span>{car.brand}</span> {car.model}</h1>
                 <img src={`cars_img/${car.id}.webp`} alt={`${car.brand} ${car.model}`} />
                 <div id={styles.detflex}>
                     <div className={styles.details}>
