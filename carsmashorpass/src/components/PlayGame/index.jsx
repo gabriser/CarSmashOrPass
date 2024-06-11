@@ -137,26 +137,30 @@ function PlayGame() {
                 <div id={styles.detflex}>
                     <div className={styles.details}>
                         <div className={styles.detcol}>
-                            <h2>Brand</h2>
-                            <h3>{car.brand}</h3>
-                        </div>
-                        <div className={styles.detcol}>
-                            <h2>Model</h2>
-                            <h3>{car.model}</h3>
-                        </div>
-                        <div className={styles.detcol}>
                             <h2>Year</h2>
                             <h3>{car.year}</h3>
                         </div>
-                    </div>
-                    <div className={styles.details}>
                         <div className={styles.detcol}>
                             <h2>Country</h2>
                             <h3>{car.country}</h3>
                         </div>
                         <div className={styles.detcol}>
+                            <h2>Engine</h2>
+                            <h3>{car.engine}</h3>
+                        </div>
+                    </div>
+                    <div className={styles.details}>
+                        <div className={styles.detcol}>
                             <h2>Power</h2>
                             <h3>{car.power} bhp</h3>
+                        </div>
+                        <div className={styles.detcol}>
+                            <h2>Layout</h2>
+                            <h3>{car.layout}</h3>
+                        </div>
+                        <div className={styles.detcol}>
+                            <h2>Weight</h2>
+                            <h3>{car.weight} kg</h3>
                         </div>
                         <div className={styles.detcol}>
                             <Link to={car.moreinfo} target="_blank" className={styles.moreinfo}>
