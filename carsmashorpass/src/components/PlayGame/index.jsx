@@ -148,15 +148,19 @@ function PlayGame() {
                             <h2>Engine</h2>
                             <h3>{car.engine}</h3>
                         </div>
-                    </div>
-                    <div className={styles.details}>
                         <div className={styles.detcol}>
                             <h2>Power</h2>
                             <h3>{car.power} bhp</h3>
                         </div>
+                    </div>
+                    <div className={styles.details}>
                         <div className={styles.detcol}>
                             <h2>Layout</h2>
                             <h3>{car.layout}</h3>
+                        </div>
+                        <div className={styles.detcol}>
+                            <h2>Transmission</h2>
+                            <h3>{car.transmission} speed</h3>
                         </div>
                         <div className={styles.detcol}>
                             <h2>Weight</h2>
