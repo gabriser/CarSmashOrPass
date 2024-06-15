@@ -46,6 +46,7 @@
         #tech {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-evenly;
 
             article {
                 background-color: $bg;
