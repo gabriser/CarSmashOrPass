@@ -95,7 +95,6 @@ function Scoreboard() {
 
             {selectedCar ? (
                 <section id={styles.cardetail}>
-                    <h1>Car Card</h1>
                     {renderCarCard(selectedCar)}
                     <section id={styles.contbackscoreboardbtn}>
                         <button id={styles.backscoreboardbtn} onClick={() => setSelectedCar(null)}>
