@@ -20,6 +20,13 @@ try {
     die('Error: ' . $e->getMessage());
 }
 
+// Layouts por defecto
+$arrLayout = array("FE FWD", "FE RWD", "FE AWD", "ME FWD", "ME RWD", "ME AWD", "RE FWD", "RE RWD", "RE AWD");
+$layoutOption = "";
+foreach ($arrLayout as $value) {
+    $layoutOption .= "<option value=\"$value\">$value</option>\n";
+}
+
 // Comprobamos si se han enviado datos del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recogemos los datos del formulario
@@ -85,7 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="number" id="power" name="power" placeholder="ex: '182' bhp" required><br><br>
 
     <label for="layout">Layout:</label>
-    <input type="text" id="layout" name="layout" placeholder="ex: 'FE FWD'" required><br><br>
+    <select name="layout" id="layout" required>
+        <?php echo $layoutOption; ?>
+    </select><br><br>
 
     <label for="transmission">Transmission:</label>
     <input type="number" id="transmission" name="transmission" placeholder="ex: '5' speed" required><br><br>
