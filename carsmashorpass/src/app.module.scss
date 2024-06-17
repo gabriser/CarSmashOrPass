@@ -15,6 +15,11 @@ $gray: #222;
 $gray-hover: #444;
 $blue: #25aadf;
 
+// Estilo de focus accesible
+*:focus-visible {
+    outline: 0.3rem solid $blue;
+}
+
 // Estilos basicos de app movil
 body {
     margin: 0;
@@ -25,6 +30,7 @@ body {
 a {
     text-decoration: none;
     outline: none;
+    display: inline-block;
 }
 
 #app {
@@ -53,7 +59,7 @@ a {
 
     transition: all 0.3s;
 
-    &:hover {
+    &:hover, &:focus-visible {
         background-color: $gray-hover;
         transform: scale(1.1);
     }

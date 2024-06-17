@@ -102,7 +102,7 @@
             }
         }
 
-        &:hover {
+        &:hover, &:focus-visible {
             transform: scale(1.05);
         }
 
@@ -133,7 +133,7 @@
 
             &#smashbtn {
                 background-color: $green;
-                &:hover {
+                &:hover, &:focus-visible {
                     background-color: $green-hover;
                 }
             }
@@ -141,12 +141,12 @@
             &#passbtn {
                 background-color: $red;
                 border-radius: 0 2rem 0 2rem;
-                &:hover {
+                &:hover, &:focus-visible {
                     background-color: $red-hover;
                 }
             }
 
-            &:hover {
+            &:hover, &:focus-visible {
                 transform: scale(1.1);
             }
 

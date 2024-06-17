@@ -48,7 +48,7 @@
             background: linear-gradient(90deg, $green 40%, $red 60%);
             color: $white;
 
-            &:hover {
+            &:hover, &:focus-visible {
                 background: linear-gradient(90deg, $green-hover 40%, $red-hover 60%);
             }
 
