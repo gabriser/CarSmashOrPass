@@ -5,11 +5,11 @@
         "src": "carsmashorpass/package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "carsmashorpass/dist"
+          "distDir": "dist"
         }
       },
       {
-        "src": "server/server.js",
+        "src": "server",
         "use": "@vercel/node"
       }
     ],
