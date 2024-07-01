@@ -2,10 +2,10 @@
     "version": 2,
     "builds": [
       {
-        "src": "carsmashorpass/package.json",
+        "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "carsmashorpass/dist"
+          "distDir": "dist"
         }
       },
       {
@@ -20,7 +20,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "carsmashorpass/dist/$1"
+        "dest": "dist/$1"
       }
     ]
   }
