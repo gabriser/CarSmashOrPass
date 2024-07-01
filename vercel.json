@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "carsmashorpass/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "carsmashorpass/dist"
+        }
+      },
+      {
+        "src": "server/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/cars/(.*)",
+        "dest": "/server/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "carsmashorpass/dist/$1"
+      }
+    ]
+  }
+  
