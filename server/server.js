@@ -15,10 +15,8 @@ app.use(express.json());
 
 const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
 
-// test route to check server status
-app.get('/', (req, res) => {
-  res.send('CarSmashOrPass Server working');
-});
+// serve static files from the cars_img directory
+app.use('/cars_img', express.static(path.join(__dirname, 'cars_img')));
 
 // get all cars
 app.get('/cars', (req, res) => {
