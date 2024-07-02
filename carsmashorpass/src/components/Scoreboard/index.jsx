@@ -10,20 +10,22 @@ function Scoreboard() {
     const [selectedCar, setSelectedCar] = useState(null); // Estado para el coche seleccionado
     let i = 1;
 
+    const API_URL = import.meta.env.VITE_API_URL;
+
     const fetchSmashedCars = async () => {
-        const response = await fetch('http://localhost:3001/cars/mostsmashed');
+        const response = await fetch(`${API_URL}/cars/mostsmashed`);
         const data = await response.json();
         setSmashedCars(data);
     };
 
     const fetchPassedCars = async () => {
-        const response = await fetch('http://localhost:3001/cars/mostpassed');
+        const response = await fetch(`${API_URL}/cars/mostpassed`);
         const data = await response.json();
         setPassedCars(data);
     };
 
     const fetchAllCars = async () => {
-        const response = await fetch('http://localhost:3001/cars/ordered');
+        const response = await fetch(`${API_URL}/cars/ordered`);
         const data = await response.json();
         setAllCars(data);
     };
@@ -52,7 +54,7 @@ function Scoreboard() {
     const renderCarCard = (car) => (
         <div className={`${styles.card}`} tabIndex="0">
             <h1><span>{car.brand}</span> {car.model}</h1>
-            <img src={`http://localhost:3001/cars_img/${car.id}.webp`} alt={`${car.brand} ${car.model}`} />
+            <img src={`${API_URL}/cars_img/${car.id}.webp`} alt={`${car.brand} ${car.model}`} />
             <div id={styles.detflex}>
                 <div className={styles.details}>
                     <div className={styles.detcol}>
@@ -128,7 +130,7 @@ function Scoreboard() {
                                         {smashedCars.map(car => (
                                             <tr key={car.id}>
                                                 <td>{i++}</td>
-                                                <td><img src={`http://localhost:3001/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
+                                                <td><img src={`${API_URL}/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
                                                 <td>
                                                     <span onClick={() => setSelectedCar(car)} onKeyDown={(event) => handleKeyDown(event, car)} className={styles.moreinfo} tabIndex="0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -153,7 +155,7 @@ function Scoreboard() {
                                         {passedCars.map(car => (
                                             <tr key={car.id}>
                                                 <td>{i++}</td>
-                                                <td><img src={`http://localhost:3001/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
+                                                <td><img src={`${API_URL}/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
                                                 <td>
                                                     <span onClick={() => setSelectedCar(car)} onKeyDown={(event) => handleKeyDown(event, car)} className={styles.moreinfo} tabIndex="0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -178,7 +180,7 @@ function Scoreboard() {
                                         {allCars.map(car => (
                                             <tr key={car.id}>
                                                 <td>{i++}</td>
-                                                <td><img src={`http://localhost:3001/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
+                                                <td><img src={`${API_URL}/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
                                                 <td>
                                                     <span onClick={() => setSelectedCar(car)} onKeyDown={(event) => handleKeyDown(event, car)} className={styles.moreinfo} tabIndex="0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
