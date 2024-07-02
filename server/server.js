@@ -15,6 +15,11 @@ app.use(express.json());
 
 const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
 
+// test route to check server status
+app.get('/', (req, res) => {
+  res.send('CarSmashOrPass Server working');
+});
+
 // get all cars
 app.get('/cars', (req, res) => {
   const cars = db.prepare('SELECT * FROM cars').all();
