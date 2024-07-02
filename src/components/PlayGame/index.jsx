@@ -13,7 +13,7 @@ function PlayGame() {
     const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:3001/cars')
+        fetch('/cars')
             .then(response => response.json())
             .then(data => setCars(shuffleArray(data)))
             .catch(error => console.error('Error fetching cars:', error));
@@ -32,7 +32,7 @@ function PlayGame() {
         if (buttonsDisabled) return; // evitar spam boton mientras hay animacion de carta
         setSmashCount(smashCount + 1);
         const car = cars[currentCarIndex];
-        fetch(`http://localhost:3001/cars/${car.id}/smash`, { method: 'POST' })
+        fetch(`/cars/${car.id}/smash`, { method: 'POST' })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -49,7 +49,7 @@ function PlayGame() {
         if (buttonsDisabled) return; // evitar spam boton mientras hay animacion de carta
         setPassCount(passCount + 1);
         const car = cars[currentCarIndex];
-        fetch(`http://localhost:3001/cars/${car.id}/pass`, { method: 'POST' })
+        fetch(`/cars/${car.id}/pass`, { method: 'POST' })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {

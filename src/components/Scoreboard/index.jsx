@@ -11,19 +11,19 @@ function Scoreboard() {
     let i = 1;
 
     const fetchSmashedCars = async () => {
-        const response = await fetch('http://localhost:3001/cars/mostsmashed');
+        const response = await fetch('/cars/mostsmashed');
         const data = await response.json();
         setSmashedCars(data);
     };
 
     const fetchPassedCars = async () => {
-        const response = await fetch('http://localhost:3001/cars/mostpassed');
+        const response = await fetch('/cars/mostpassed');
         const data = await response.json();
         setPassedCars(data);
     };
 
     const fetchAllCars = async () => {
-        const response = await fetch('http://localhost:3001/cars/ordered');
+        const response = await fetch('/cars/ordered');
         const data = await response.json();
         setAllCars(data);
     };
