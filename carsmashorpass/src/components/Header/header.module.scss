@@ -12,8 +12,8 @@
 
         a {
             svg {
-                width: 3rem;
-                height: 3rem;
+                width: $size-svg;
+                height: $size-svg;
                 fill: $white;
             }
             transition: all 0.3s;

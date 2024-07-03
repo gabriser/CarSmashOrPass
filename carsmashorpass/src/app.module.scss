@@ -15,6 +15,15 @@ $gray: #222;
 $gray-hover: #444;
 $blue: #25aadf;
 
+// Variables de tamaño de letra
+$size-h1: 1.8rem;
+$size-h2: 1.3rem;
+$size-p: 0.7rem;
+$size-btn-text: 1.1rem;
+$size-svg: 2.5rem;
+$size-svg-btn: 1.3rem;
+$size-svg-text: 0.9rem;
+
 // Estilo de focus accesible
 *:focus-visible {
     outline: 0.3rem solid $blue;
@@ -35,7 +44,7 @@ a {
 
 #app {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 400px;
 
     height: 100vh;
     display: flex;
@@ -50,7 +59,7 @@ a {
     justify-content: center;
 
     width: 12rem;
-    font-size: 1.2rem;
+    font-size: $size-btn-text;
     background-color: $gray;
     color: $white;
     padding: 1rem;
@@ -65,8 +74,8 @@ a {
     }
 
     svg {
-        width: 2rem;
-        height: 2rem;
+        width: $size-svg-btn;
+        height: $size-svg-btn;
         fill: $white;
         margin-right: 0.5rem;
     }

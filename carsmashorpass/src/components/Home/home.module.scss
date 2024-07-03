@@ -18,7 +18,7 @@
 
     h1 {
         text-align: center;
-        font-size: 2.2rem;
+        font-size: $size-h1;
         font-weight: 400;
         color: $white;
         margin-top: -1rem;
@@ -43,8 +43,8 @@
         @extend .defaultbtn;
 
         &#playbtn {
-            width: 20rem;
-            font-size: 2rem;
+            width: 18rem;
+            font-size: $size-h1;
             background: linear-gradient(90deg, $green 40%, $red 60%);
             color: $white;
 

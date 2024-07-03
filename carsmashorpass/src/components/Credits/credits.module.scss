@@ -14,12 +14,13 @@
 
     h1 {
         text-align: center;
-        font-size: 2.2rem;
+        font-size: $size-h1;
         color: $white;
     }
 
     p {
         text-align: center;
+        font-size: $size-p;
         color: $white;
     }
 
@@ -30,13 +31,14 @@
         color: $white;
 
         h2 {
-            font-size: 1.5rem;
+            font-size: $size-h2;
             margin-bottom: 0.5rem;
         }
 
         ul {
             li {
                 margin: 0.5rem 0;
+                font-size: $size-p;
                 a {
                     color: $blue;
                 }
@@ -61,14 +63,14 @@
                 margin: 0.2rem;
 
                 svg {
-                    width: 2rem;
-                    height: 2rem;
+                    width: $size-svg-btn;
+                    height: $size-svg-btn;
                     fill: $white;
                 }
 
                 p {
                     margin-top: 0.5rem;
-                    font-size: 0.8rem;
+                    font-size: $size-p;
                 }
 
             }
