@@ -36,7 +36,7 @@ Once inside the folder do the following commands:
 
 ### Car list
 
-The car list currently consists of 79 cars from 6 Japanese brands (Honda, Mazda, Mitsubishi, Nissan, Subaru, Toyota):
+The car list currently consists of 80 cars from 6 Japanese brands (Honda, Mazda, Mitsubishi, Nissan, Subaru, Toyota):
 
 - [1974 Honda Civic RS](https://forza.fandom.com/wiki/Honda_Civic_RS)
 - [1984 Honda Civic CRX Mugen](https://forza.fandom.com/wiki/Honda_Civic_CRX_Mugen)
@@ -116,6 +116,7 @@ The car list currently consists of 79 cars from 6 Japanese brands (Honda, Mazda,
 - [2003 Toyota Celica Sport Specialty II](https://forza.fandom.com/wiki/Toyota_Celica_SS-I)
 - [2013 Toyota GT86](https://forza.fandom.com/wiki/Toyota_GT86)
 - [2020 Toyota GR Supra](https://forza.fandom.com/wiki/Toyota_GR_Supra)
+- [2021 Toyota GR Yaris](https://forza.fandom.com/wiki/Toyota_GR_Yaris)
 - [2022 Toyota GR86](https://forza.fandom.com/wiki/Toyota_GR86)
 
 ## Pages and components

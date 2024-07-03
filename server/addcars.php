@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h1>Add Car</h1>
 
-<p>PD: add the car image manually to public/cars_img/*id*.webp (id from db)</p>
+<p>PD: add the car image manually to server/cars_img/*id*.webp (id from db)</p>
 
 <p>PD2: the folder server and addcars.php need to have write permissions on other users (server access)</p>
 
