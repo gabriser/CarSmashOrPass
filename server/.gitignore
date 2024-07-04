@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Vercel Postgres variables
+.env
+
+# Migration csv file from sqlite to postgres
+cars_export.csv
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
