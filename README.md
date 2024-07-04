@@ -15,7 +15,7 @@ Car information comes from the Forza Horizon 5 cars page on [Forza Fandom Wiki](
 
 Postgres Database is uploaded in Vercel (Vercel Postgres).
 
-Old implementation of the database was on sqlite (ond [cars.db](server/_cars.db) is on server folder).
+Old implementation of the database was on sqlite (old [cars.db](server/_cars.db) is on server folder).
 
 ### Local installation guide
 
