@@ -14,13 +14,6 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// ensure the /tmp directory exists
-// WARNING: Vercel testing (every new deploy resets the smash and pass count)
-const tmpDir = '/tmp';
-if (!fs.existsSync(tmpDir)) {
-  fs.mkdirSync(tmpDir);
-}
-
 // Copy the database to /tmp if it does not exist there
 const dbPath = path.join(__dirname, 'cars.db');
 const tmpDbPath = path.join(tmpDir, 'cars.db');
@@ -29,8 +22,7 @@ if (!fs.existsSync(tmpDbPath)) {
   fs.copyFileSync(dbPath, tmpDbPath);
 }
 
-//const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
-const db = new Database(tmpDbPath, { verbose: console.log }); // Vercel tmp db
+const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
 
 // serve static files from the cars_img directory
 app.use('/cars_img', express.static(path.join(__dirname, 'cars_img')));
