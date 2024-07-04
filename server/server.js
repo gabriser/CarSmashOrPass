@@ -3,7 +3,6 @@ import Database from 'better-sqlite3';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,14 +12,6 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
-
-// Copy the database to /tmp if it does not exist there
-const dbPath = path.join(__dirname, 'cars.db');
-const tmpDbPath = path.join(tmpDir, 'cars.db');
-
-if (!fs.existsSync(tmpDbPath)) {
-  fs.copyFileSync(dbPath, tmpDbPath);
-}
 
 const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
 
