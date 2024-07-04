@@ -19,6 +19,7 @@ function Credits() {
 
                 <ul>
                     <li>Racing Car free icon created by <Link target="_blank" to="https://www.flaticon.com/free-icon/racing-car_4745016">DinosoftLabs on Flaticon</Link></li>
+                    <li>Car Tire free icon created by <Link target="_blank" to="https://www.flaticon.es/icono-gratis/llanta-de-carro_5266107">Freepik on Flaticon</Link></li>
                     <li>Font Awesome Free 6.5.2 by <Link target="_blank" to="https://fontawesome.com">@fontawesome</Link> <Link target="_blank" to="https://fontawesome.com/license/free">License</Link> - Copyright 2024 Fonticons, Inc.</li>
                     <li>Montserrat Font Family from <Link target="_blank" to="https://fonts.google.com/specimen/Montserrat/about?query=montserrat">Google Fonts (OPL License)</Link></li>
                     <li>Reset CSS by Meyer Web <Link to="https://meyerweb.com/eric/tools/css/reset/reset.css" target="_blank">reset.css</Link></li>

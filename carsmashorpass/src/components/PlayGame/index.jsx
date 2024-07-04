@@ -83,8 +83,10 @@ function PlayGame() {
     if (cars.length === 0) {
         return (
             <div id={styles.loading}>
+                <img id={styles.loadingicon} src='CarTire.png' alt='Car Tyre Loading Icon' title='Car Tyre Loading Icon' />
                 <h1>Loading...</h1>
-                <p>If it is taking a long time, it is possible that the server is not working correctly. Try again later.</p>
+                <p>If it is taking a long time, <br />it is possible that the server is not working correctly.</p>
+                <p>Try again later.</p>
             </div>
         );
     }

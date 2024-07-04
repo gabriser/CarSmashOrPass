@@ -214,6 +214,7 @@ A simple game created by Gabriel Serrat Espejo ([gabriser GitHub](https://github
 ### Assets
 
 - Racing Car (Lotus Exige) free icon created by [DinosoftLabs on Flaticon](https://www.flaticon.com/free-icon/racing-car_4745016).
+- Car Tire free icon created by [Freepik on Flaticon](https://www.flaticon.es/icono-gratis/llanta-de-carro_5266107).
 - Font Awesome Free 6.5.2 by [@fontawesome License](https://fontawesome.com/) - Copyright 2024 Fonticons, Inc.
 - [Montserrat Font Family from Google Fonts (OPL License)](https://fonts.google.com/specimen/Montserrat/about?query=montserrat)
 - [Reset CSS by Meyer Web](https://meyerweb.com/eric/tools/css/reset/reset.css)
