@@ -29,7 +29,8 @@ if (!fs.existsSync(tmpDbPath)) {
   fs.copyFileSync(dbPath, tmpDbPath);
 }
 
-const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
+//const db = new Database(path.join(__dirname, 'cars.db'), { verbose: console.log });
+const db = new Database(tmpDbPath, { verbose: console.log }); // Vercel tmp db
 
 // serve static files from the cars_img directory
 app.use('/cars_img', express.static(path.join(__dirname, 'cars_img')));
