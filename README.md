@@ -1,22 +1,28 @@
 # CarSmashOrPass
 Smash or Pass Car Edition. A simple game of choosing your favorite cars. Made with React.
 
+[https://carsmashorpass.vercel.app/](https://carsmashorpass.vercel.app/)
+
 ![Car Smash Or Pass logo](README_img/CarSmashOrPass.png)
 
 ## Description
 
-A web application created with Vite, React, Express and SQLite.
+A web application created with Vite, React, Express and Postgres.
 
 The game consists of voting for cars that you like (smash) or hate (pass).
 
 Car information comes from the Forza Horizon 5 cars page on [Forza Fandom Wiki](https://forza.fandom.com/wiki/Forza_Horizon_5/Cars).
+
+Postgres Database is uploaded in Vercel (Vercel Postgres).
+
+Old implementation of the database was on sqlite (ond [cars.db](server/_cars.db) is on server folder).
 
 ### Local installation guide
 
 Once the repository folder is downloaded, the application is divided into 2 parts:
 
 - **carsmashorpass** folder (vite + react)
-- **server** folder (express + sqlite3 db)
+- **server** folder (express + pg)
 
 #### Front-end installation (carsmashorpass folder)
 
@@ -26,6 +32,8 @@ Once inside the folder do the following commands:
 
 `npm run dev` to start vite.
 
+You can build vite to production in local with `vite build` or `npm run build`.
+
 #### Back-end installation (server folder)
 
 Once inside the folder do the following commands:
@@ -33,6 +41,12 @@ Once inside the folder do the following commands:
 `npm install` to install the dependencies.
 
 `npm start` or `node server.js` to start express.
+
+The variables on server/.env are not included (Production Postgres db).
+
+There is a [placeholder .env](server/.placeholder_env) file for add your db info.
+
+You need to install **postgres** on your local system or do it on a container like **docker**.
 
 ### Car list
 
@@ -213,4 +227,4 @@ A simple game created by Gabriel Serrat Espejo ([gabriser GitHub](https://github
 - React Router: [reactrouter.com](https://reactrouter.com/), [npmjs.com (react-router-dom)](https://www.npmjs.com/package/react-router-dom)
 - Sass: [sass-lang.com](https://sass-lang.com/), [npmjs.com (sass)](https://www.npmjs.com/package/sass)
 - Express: [expressjs.com](http://expressjs.com/), [npmjs.com (express)](https://www.npmjs.com/package/express)
-- SQLite3: [www.sqlite.org](https://www.sqlite.org/), [npmjs.com (better-sqlite3)](https://www.npmjs.com/package/better-sqlite3)
+- Postgres: [www.postgresql.org](https://www.postgresql.org/), [Vercel Postgres](https://vercel.com/storage/postgres), [npmjs.com (pg)](https://www.npmjs.com/package/pg)
