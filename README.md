@@ -232,5 +232,6 @@ A simple game created by Gabriel Serrat Espejo ([gabriser GitHub](https://github
 - - [npmjs.com (@fortawesome/free-brands-svg-icons)](https://www.npmjs.com/package/@fortawesome/free-brands-svg-icons)
 - - [npmjs.com (@fortawesome/free-solid-svg-icons)](https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons)
 - - [npmjs.com (@fortawesome/react-fontawesome)](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
+- Vercel Analytics: [Vercel Analytics docs](https://vercel.com/docs/analytics), [npmjs.com (@vercel/analytics)](https://www.npmjs.com/package/@vercel/analytics)
 - Express: [expressjs.com](http://expressjs.com/), [npmjs.com (express)](https://www.npmjs.com/package/express)
 - Postgres: [www.postgresql.org](https://www.postgresql.org/), [Vercel Postgres](https://vercel.com/storage/postgres), [npmjs.com (pg)](https://www.npmjs.com/package/pg)
