@@ -14,6 +14,8 @@ import styles from './app.module.scss';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { Analytics } from "@vercel/analytics/react";
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -42,6 +44,7 @@ function App() {
     </>*/
 
     <div id={styles.app}>
+      <Analytics />
       <BrowserRouter>
         <Header />
         <Routes>
