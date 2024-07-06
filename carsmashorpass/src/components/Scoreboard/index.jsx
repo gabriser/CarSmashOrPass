@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './scoreboard.module.scss';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare, faRectangleList, faCar } from '@fortawesome/free-solid-svg-icons';
 
 function Scoreboard() {
     const [view, setView] = useState('all'); // Estado para manejar la vista de la tabla
@@ -91,7 +93,7 @@ function Scoreboard() {
                     </div>
                     <div className={styles.detcol}>
                         <Link to={car.moreinfo} target="_blank" className={styles.moreinfo}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                             Open Forza Wiki
                         </Link>
                     </div>
@@ -108,7 +110,7 @@ function Scoreboard() {
                     {renderCarCard(selectedCar)}
                     <section id={styles.contbackscoreboardbtn}>
                         <button id={styles.backscoreboardbtn} onClick={() => setSelectedCar(null)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 96C0 60.7 28.7 32 64 32H512c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM128 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm32-128a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM128 384a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm96-248c-13.3 0-24 10.7-24 24s10.7 24 24 24H448c13.3 0 24-10.7 24-24s-10.7-24-24-24H224zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H448c13.3 0 24-10.7 24-24s-10.7-24-24-24H224zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H448c13.3 0 24-10.7 24-24s-10.7-24-24-24H224z" /></svg>
+                            <FontAwesomeIcon icon={faRectangleList} />
                             Back to Scoreboard
                         </button>
                     </section>
@@ -135,7 +137,7 @@ function Scoreboard() {
                                                 <td><img src={`${C_API_URL}/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
                                                 <td>
                                                     <span onClick={() => setSelectedCar(car)} onKeyDown={(event) => handleKeyDown(event, car)} className={styles.moreinfo} tabIndex="0">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
+                                                        <FontAwesomeIcon icon={faCar} />
                                                         {car.year} {car.brand} {car.model}
                                                     </span>
                                                 </td>
@@ -160,7 +162,7 @@ function Scoreboard() {
                                                 <td><img src={`${C_API_URL}/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
                                                 <td>
                                                     <span onClick={() => setSelectedCar(car)} onKeyDown={(event) => handleKeyDown(event, car)} className={styles.moreinfo} tabIndex="0">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
+                                                        <FontAwesomeIcon icon={faCar} />
                                                         {car.year} {car.brand} {car.model}
                                                     </span>
                                                 </td>
@@ -185,7 +187,7 @@ function Scoreboard() {
                                                 <td><img src={`${C_API_URL}/cars_img/${car.id}.webp`} alt={`${car.year} ${car.brand} ${car.model}`} /></td>
                                                 <td>
                                                     <span onClick={() => setSelectedCar(car)} onKeyDown={(event) => handleKeyDown(event, car)} className={styles.moreinfo} tabIndex="0">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
+                                                        <FontAwesomeIcon icon={faCar} />
                                                         {car.year} {car.brand} {car.model}
                                                     </span>
                                                 </td>

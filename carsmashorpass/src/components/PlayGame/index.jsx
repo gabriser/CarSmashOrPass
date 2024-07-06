@@ -1,6 +1,8 @@
 import styles from './playgame.module.scss';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare, faClockRotateLeft, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 function PlayGame() {
     const [cars, setCars] = useState([]);
@@ -110,7 +112,7 @@ function PlayGame() {
                                             <td><img src={`${C_API_URL}/cars_img/${item.id}.webp`} alt={`${item.year} ${item.brand} ${item.model}`} /></td>
                                             <td>
                                                 <Link to={item.moreinfo} target="_blank" className={styles.moreinfo}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                                                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                                                     {item.year} {item.brand} {item.model}
                                                 </Link>
                                             </td>
@@ -123,7 +125,7 @@ function PlayGame() {
                     )}
                     <section id={styles.contbackgamebtn}>
                         <button id={styles.backgamebtn} onClick={() => setShowHistory(false)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                            <FontAwesomeIcon icon={faPlay} />
                             Back to Game
                         </button>
                     </section>
@@ -172,7 +174,7 @@ function PlayGame() {
                         </div>
                         <div className={styles.detcol}>
                             <Link to={car.moreinfo} target="_blank" className={styles.moreinfo}>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                                 Open Forza Wiki
                             </Link>
                         </div>
@@ -185,7 +187,7 @@ function PlayGame() {
             </section>
             <section id={styles.conthistorybtn}>
                 <button id={styles.historybtn} onClick={() => setShowHistory(true)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg>
+                    <FontAwesomeIcon icon={faClockRotateLeft} />
                     See History
                     </button>
             </section>

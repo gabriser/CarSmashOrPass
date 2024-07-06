@@ -14,7 +14,10 @@
             svg {
                 width: $size-svg;
                 height: $size-svg;
-                fill: $white;
+                vertical-align: middle;
+                path {
+                    fill: $white;
+                }
             }
             transition: all 0.3s;
 
