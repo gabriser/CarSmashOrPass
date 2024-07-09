@@ -175,6 +175,18 @@ Show a table with the last voted cars. Shows whether Smash (S) or Pass (P) has b
 
 ![See history view image](README_img/SeeHistory.png)
 
+
+#### Game Over
+
+Once you have finished voting for all the cars, a Game Over screen is displayed with:
+- A 'Thanks for playing' message
+- Total, smashed and passed statistics
+- A table showing all voted cars (similar to See History)
+
+You can exit by clicking any icon in the header or footer (Home, Scoreboard or Credits).
+
+![Game Over view image](README_img/GameOver.png)
+
 ### Scoreboard
 
 Shows 3 types of tables:
