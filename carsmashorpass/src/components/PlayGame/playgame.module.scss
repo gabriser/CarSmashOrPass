@@ -25,6 +25,73 @@
     }
 }
 
+#gameover {
+    margin: 0 1rem;
+    color: $white;
+
+    h1 {
+        font-size: $size-h1;
+        font-weight: 700;
+        color: $green;
+        text-align: center;
+        span {
+            color: $red;
+        }
+    }
+
+    h2 {
+        font-size: $size-h2;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    button {
+        @extend .defaultbtn;
+        margin-top: 2rem;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+
+        .boxstats {
+            margin: 0 0.5rem;
+            height: 4.5rem;
+            width: 4.5rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            span {
+                font-size: $size-h2;
+            }
+            p {
+                font-size: $size-p;
+            }
+
+            border-radius: 0 0 2rem 2rem;
+            background-color: $white;
+            color: $gray;
+
+            &:first-child {
+                border-radius: 2rem 0 2rem 0;
+                color: $white;
+                background-color: $green;
+            }
+
+            &:last-child {
+                border-radius: 0 2rem 0 2rem;
+                color: $white;
+                background-color: $red;
+            }
+        }
+
+    }
+
+}
+
 #playgame {
     margin: 0 1rem;
 
@@ -193,85 +260,6 @@
             margin: 10rem 0;
         }
 
-        table, tr, th, td {
-            border: 0.2rem solid $bg;
-        }
-    
-        .tablescroll {
-            max-height: 22rem;
-            overflow-y: auto;
-        }
-
-        table {
-            width: 100%;
-            font-size: $size-p;
-            color: $white;
-            max-height: 20rem;
-            overflow-y: auto;
-            tr {
-                vertical-align: middle;
-                border-radius: 2rem;
-                background-color: $gray;
-                &:nth-child(2n+1) {
-                    background-color: $gray-hover;
-                }
-                th, td {
-                    padding: 0.5rem;
-                    vertical-align: middle;
-                    &:nth-child(1) {
-                        width: 10%;
-                        text-align: center;
-                    }
-                    &:nth-child(2) {
-                        width: 20%;
-                    }
-                    &:nth-child(3) {
-                        width: 60%;
-                    }
-                    &:nth-child(4) {
-                        width: 10%;
-                        text-align: center;
-                    }
-                    img {
-                        width: 100%;
-                    }
-                    span {
-                        background-color: $white;
-                        font-size: $size-p;
-                        padding: 0.2rem;
-                        color: $bg;
-                        margin-left: 0.5rem;
-                        border-radius: 1rem;
-                        font-weight: 700;
-                    }
-
-                    .moreinfo {
-                        color: $blue;
-                        display: flex;
-                        align-items: center;
-                        svg {
-                            width: $size-svg-text;
-                            height: $size-svg-text;
-                            fill: $blue;
-                            margin-right: 0.5rem;
-                        }
-                    }
-
-                    &.smashtd {
-                        background-color: $green;
-                        color: $white;
-                        font-weight: 700;
-                    }
-                    
-                    &.passtd {
-                        background-color: $red;
-                        color: $white;
-                        font-weight: 700;
-                    }
-                }
-            }
-        }
-
         #contbackgamebtn {
             display: flex;
             justify-content: center;
@@ -282,6 +270,89 @@
             }
         }
 
+    }
+
+}
+
+#history, #gameover {
+
+    table, tr, th, td {
+        border: 0.2rem solid $bg;
+    }
+
+    .tablescroll {
+        max-height: 22rem;
+        overflow-y: auto;
+    }
+
+    table {
+        width: 100%;
+        font-size: $size-p;
+        color: $white;
+        max-height: 20rem;
+        overflow-y: auto;
+        tr {
+            vertical-align: middle;
+            border-radius: 2rem;
+            background-color: $gray;
+            &:nth-child(2n+1) {
+                background-color: $gray-hover;
+            }
+            th, td {
+                padding: 0.5rem;
+                vertical-align: middle;
+                &:nth-child(1) {
+                    width: 10%;
+                    text-align: center;
+                }
+                &:nth-child(2) {
+                    width: 20%;
+                }
+                &:nth-child(3) {
+                    width: 60%;
+                }
+                &:nth-child(4) {
+                    width: 10%;
+                    text-align: center;
+                }
+                img {
+                    width: 100%;
+                }
+                span {
+                    background-color: $white;
+                    font-size: $size-p;
+                    padding: 0.2rem;
+                    color: $bg;
+                    margin-left: 0.5rem;
+                    border-radius: 1rem;
+                    font-weight: 700;
+                }
+
+                .moreinfo {
+                    color: $blue;
+                    display: flex;
+                    align-items: center;
+                    svg {
+                        width: $size-svg-text;
+                        height: $size-svg-text;
+                        fill: $blue;
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                &.smashtd {
+                    background-color: $green;
+                    color: $white;
+                    font-weight: 700;
+                }
+                
+                &.passtd {
+                    background-color: $red;
+                    color: $white;
+                    font-weight: 700;
+                }
+            }
+        }
     }
 
 }

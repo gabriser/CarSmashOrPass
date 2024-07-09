@@ -2,7 +2,7 @@ import styles from './playgame.module.scss';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare, faClockRotateLeft, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faClockRotateLeft, faHouse, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 function PlayGame() {
     const [cars, setCars] = useState([]);
@@ -13,6 +13,7 @@ function PlayGame() {
     const [showHistory, setShowHistory] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
     const [buttonsDisabled, setButtonsDisabled] = useState(false);
+    const [gameOver, setGameOver] = useState(false);
 
     const C_API_URL = import.meta.env.VITE_API_URL;
 
@@ -71,15 +72,19 @@ function PlayGame() {
     };
 
     const goToNextCar = () => {
-        setIsAnimating(true);
-        setButtonsDisabled(true);
-        setTimeout(() => {
-            setCurrentCarIndex((prevIndex) => (prevIndex + 1) % cars.length);
-        }, 250);
-        setTimeout(() => {
-            setIsAnimating(false);
-            setButtonsDisabled(false);
-        }, 500);
+        if (currentCarIndex + 1 >= cars.length) {
+            setGameOver(true);
+        } else {
+            setIsAnimating(true);
+            setButtonsDisabled(true);
+            setTimeout(() => {
+                setCurrentCarIndex((prevIndex) => prevIndex + 1);
+            }, 250);
+            setTimeout(() => {
+                setIsAnimating(false);
+                setButtonsDisabled(false);
+            }, 500);
+        }
     };
 
     if (cars.length === 0) {
@@ -89,6 +94,58 @@ function PlayGame() {
                 <h1>Loading...</h1>
                 <p>If it is taking a long time, <br />it is possible that the server is not working correctly.</p>
                 <p>Try again later.</p>
+            </div>
+        );
+    }
+
+    if (gameOver) {
+        return (
+            <div id={styles.gameover}>
+                <h1>Game <span>Over</span></h1>
+
+                <h2>Thanks for playing</h2>
+
+                <div className={styles.stats}>
+                    <div className={styles.boxstats}>
+                        <div>
+                            <span>{smashCount}</span>
+                            <p>Smahed</p>
+                        </div>
+                    </div>
+                    <div className={styles.boxstats}>
+                        <div>
+                            <span>{cars.length}</span>
+                            <p>Total</p>
+                        </div>
+                    </div>
+                    <div className={styles.boxstats}>
+                        <div>
+                            <span>{passCount}</span>
+                            <p>Passed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles.tablescroll}>
+                    <table>
+                        <tbody>
+                            {history.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{history.length - index}</td>
+                                    <td><img src={`${C_API_URL}/cars_img/${item.id}.webp`} alt={`${item.year} ${item.brand} ${item.model}`} /></td>
+                                    <td>
+                                        <Link to={item.moreinfo} target="_blank" className={styles.moreinfo}>
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                            {item.year} {item.brand} {item.model}
+                                        </Link>
+                                    </td>
+                                    <td className={item.action === 'S' ? styles.smashtd : styles.passtd}>{item.action}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         );
     }
